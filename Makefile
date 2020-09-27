@@ -3,7 +3,7 @@ ifneq ($(KERNELRELEASE),)
 	rtk_btusb-y = rtk_coex.o rtk_misc.o rtk_bt.o
 else
 	PWD := $(shell pwd)
-	KVER := $(shell uname -r)
+	KVER ?= $(shell uname -r)
 	KDIR ?= /lib/modules/$(KVER)/build
 
 all:
